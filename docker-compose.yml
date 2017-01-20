@@ -1,12 +1,12 @@
 version: '2'
 services:
-  Imago3.admin:
+  admin:
     image: 'imago/admin3:master'
     ports:
-      - 4200
+      - 4200:4200
     links:
-      - imago3.api
-  imago3.api:
+      - api
+  api:
     image: 'imago/api3:master'
     ports:
-      - 3000
+      - 3000:3000
