@@ -1,11 +1,21 @@
-import { browser, element, by } from 'protractor';
+import { browser, element, by, ExpectedConditions } from 'protractor';
 
 export class Imago3AdminPage {
   navigateTo() {
     return browser.get('/');
   }
 
-  getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+  getCounter() {
+    const progress = element(by.css('app-root .in-progress'));
+    browser.wait(ExpectedConditions.invisibilityOf(progress), 1000);
+    return element(by.css('app-root .count')).getText();
+  }
+
+  incrementCounter() {
+    return element(by.css('app-root button.increment')).click();
+  }
+
+  resetCounter() {
+    return element(by.css('app-root button.reset')).click();
   }
 }

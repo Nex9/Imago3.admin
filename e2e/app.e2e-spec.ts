@@ -9,6 +9,17 @@ describe('imago3-admin App', function() {
 
   it('should display message saying app works', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+
+    page.resetCounter();
+    expect(page.getCounter()).toEqual('0');
+    page.incrementCounter();
+    expect(page.getCounter()).toEqual('1');
+    page.incrementCounter();
+    expect(page.getCounter()).toEqual('2');
+
+    page.resetCounter();
+    expect(page.getCounter()).toEqual('0');
+    page.incrementCounter();
+    expect(page.getCounter()).toEqual('1');
   });
 });

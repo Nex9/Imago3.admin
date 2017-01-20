@@ -1,2 +1,7 @@
-<div>counter: {{count}}</div>
-<button (click)="incrementCounter()">increment</button>
+<div>
+  counter:
+  <span class="count">{{count}}</span>
+  <span *ngIf="inProgress" class="in-progress">...</span>
+</div>
+<button (click)="incrementCounter()" class="increment" [disabled]="inProgress">increment</button>
+<button (click)="resetCounter()" class="reset" [disabled]="inProgress">reset</button>
