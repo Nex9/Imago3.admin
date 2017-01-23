@@ -7,7 +7,7 @@ describe('imago3-admin App', function() {
     page = new Imago3AdminPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display the counter, increment it and reset it', () => {
     page.navigateTo();
 
     page.resetCounter();
